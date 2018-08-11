@@ -1,0 +1,38 @@
+@font-face {
+    font-family: futura;
+    src: url(../fonts/LTe50152.woff);
+}
+
+/* Responsividade em fontes */
+html { font-size: calc(1em + 1vw); }
+
+
+body{
+	font-family: open Sans;
+}
+
+
+section.inicio{
+	text-align: center;
+
+
+}
+section.inicio button{
+	margin-top: 5vh;
+	background: #A39BE7;
+	border: none;
+	color: white;
+	padding: 2vw;
+}
+
+section.compra{
+	display: none;
+}
+section.compra ul li{
+	justify-content: space-between;
+	display: flex;
+	padding: 0 5vw 0 0;
+}
+section.estoque{
+	display: none;
+}

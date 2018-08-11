@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<section class="inicio">
+		<ul>
+			<li><button class="venda">Realizar Venda</button></li>
+			<li><button class="estoque">Verificar Estoque</button></li>
+			<li><button class="historico">Histórico de Vendas</button></li>
+		</ul>
+	</section>
+
+	<section class="compra">
+		<ul>
+			<li><h1>Macarrão: R$4,00</h1><p><span class="macarrao">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Arroz: R$7,00</h1><p><span class="arroz">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>	
+			<li><h1>Feijão: R$6,00</h1><p><span class="feijao">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Leite: R$2,30</h1><p><span class="leite">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>		
+			<li><h1>Tomate: R$,00 </h1><p><span class="tomate">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Farinha: R$12,50</h1><p><span class="farinha">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Batata: R$1,50 </h1><p><span class="batata">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Carne: R$23,00</h1><p><span class="carne">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Açucar: R$8,00</h1><p><span class="acucar">0</span></p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>
+			<li><h1>Sal: R$3,00 </h1><p><span class="sal"></span>0</p><div><button class="soma1">+</button><button class="subtracao1">-</button></div></li>					
+		</ul>
+	</section>
+
+	<section class="estoque">
+		<ul>
+			<li><p>Macarrão: R$4,00 <span class="macarrao">0</span></p></li>
+			<li><p>Arroz: R$7,00 <span class="arroz">0</span></p></li>			
+			<li><p>Feijão: R$6,00 <span class="feijao">0</span></p></li>
+			<li><p>Leite: R$2,30 <span class="leite">0</span></p></li>		
+			<li><p>Tomate: R$,00 <span class="tomate">0</span></p></li>
+			<li><p>Farinha: R$12,50 <span class="farinha">0</span></p></li>	
+			<li><p>Batata: R$1,50 <span class="batata">0</span></p></li>
+			<li><p>Carne: R$23,00 <span class="carne">0</span></p></li>
+			<li><p>Açucar: R$8,00 <span class="acucar">0</span></p></li>
+			<li><p>Sal: R$3,00 <span class="sal"></span>0</p></li>												
+		</ul>
+	</section>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	botaoVenda=$('.venda');
+	telaInicio=$('.inicio');
+	telaVenda=$('.compra');
+
+
+
+	botaoVenda.on("click", function(){
+		telaInicio.hide();
+		telaVenda.show();
+
+
+	});
+
+
+
+</script>
+</body>
+</html>
