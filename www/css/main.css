@@ -14,25 +14,57 @@ body{
 
 section.inicio{
 	text-align: center;
-
-
+}
+section.inicio ul{
+	margin-top: 20vh;
 }
 section.inicio button{
 	margin-top: 5vh;
 	background: #A39BE7;
 	border: none;
 	color: white;
-	padding: 2vw;
+	padding: 4vw;
+	font-size: 1.5em;
 }
 
 section.compra{
 	display: none;
 }
+section.compra h2{
+	text-align: center;
+	background: #2980b9;
+	top: 0;
+	padding: 5vh;
+	font-size: 2em;
+	color: white;
+}
+
 section.compra ul li{
 	justify-content: space-between;
 	display: flex;
 	padding: 0 5vw 0 0;
+	padding-top: 2vh;
+	background: #ecf0f1;
+	padding-bottom: 2vh;
+	line-height: 6vh;
 }
+section.compra ul li div button{
+	border: none;
+	color: white;
+	font-family: open sans;
+	font-size: 1.5em;
+	background: #2980b9;
+	margin-left: 2vw; 
+	
+}
+section.compra ul li div button.sub{
+	padding-left: 2.5vw; 
+	padding-right: 2.5vw;
+}
+section.compra ul li div button.subtracao1{
+}
+
+
 section.estoque{
 	display: none;
 }
