@@ -25,7 +25,7 @@
 		<ul>
 			<li><h1>Macarrão: R$4,00</h1><p><span class="macarrao">0</span></p><div><button class="soma1">+</button><button class="sub subtracao1">-</button></div></li>
 			<li><h1>Arroz: R$7,00</h1><p><span class="arroz">0</span></p><div><button class="soma2">+</button><button class="sub subtracao2">-</button></div></li>	
-			<li><h1>Feijão: R$6,00</h1><p><span class="feijao">0</span></p><div><button class="soma3">+</button><button class="sub ssubtracao3">-</button></div></li>
+			<li><h1>Feijão: R$6,00</h1><p><span class="feijao">0</span></p><div><button class="soma3">+</button><button class="sub subtracao3">-</button></div></li>
 			<li><h1>Leite: R$2,30</h1><p><span class="leite">0</span></p><div><button class="soma4">+</button><button class="sub subtracao4">-</button></div></li>		
 			<li><h1>Tomate: R$,00 </h1><p><span class="tomate">0</span></p><div><button class="soma5">+</button><button class="sub subtracao5">-</button></div></li>		
 		</ul>
@@ -60,8 +60,17 @@
 	botaoVenda=$('.venda');
 	telaInicio=$('.inicio');
 	telaVenda=$('.compra');
+	adicionar1=$('soma1');
+	adicionar2=$('soma2');
+	adicionar3=$('soma3');
+	adicionar4=$('soma4');
+	adicionar5=$('soma5');
 
-
+	remover1=$('subtracao1');
+	remover2=$('subtracao2');
+	remover3=$('subtracao3');
+	remover4=$('subtracao4');
+	remover5=$('subtracao5');
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
