@@ -23,16 +23,23 @@
 	<section class="compra">
 			<h2>Produtos</h2>
 		<ul>
-			<li><h1>Macarrão: R$4,00</h1><p><span class="macarrao">0</span></p><div><button class="soma1">+</button><button class="sub subtracao1">-</button></div></li>
-			<li><h1>Arroz: R$7,00</h1><p><span class="arroz">0</span></p><div><button class="soma2">+</button><button class="sub subtracao2">-</button></div></li>	
-			<li><h1>Feijão: R$6,00</h1><p><span class="feijao">0</span></p><div><button class="soma3">+</button><button class="sub subtracao3">-</button></div></li>
-			<li><h1>Leite: R$2,30</h1><p><span class="leite">0</span></p><div><button class="soma4">+</button><button class="sub subtracao4">-</button></div></li>		
-			<li><h1>Tomate: R$5,00 </h1><p><span class="tomate">0</span></p><div><button class="soma5">+</button><button class="sub subtracao5">-</button></div></li>		
+			<li>
+				<h1>Macarrão: R$<span class="valor1">4.00</span></h1>
+				<p><span class="macarrao">0</span></p>
+				<div>
+					<button class="soma1">+</button>
+					<button class="sub subtracao1">-</button>
+				</div>
+			</li>
+			<li><h1>Arroz: R$<span class="valor2">7.00</span></h1><p><span class="arroz">0</span></p><div><button class="soma2">+</button><button class="sub subtracao2">-</button></div></li>	
+			<li><h1>Feijão: R$<span class="valor3">6.00</span></h1><p><span class="feijao">0</span></p><div><button class="soma3">+</button><button class="sub subtracao3">-</button></div></li>
+			<li><h1>Leite: R$<span class="valor4">2.00</span></h1><p><span class="leite">0</span></p><div><button class="soma4">+</button><button class="sub subtracao4">-</button></div></li>		
+			<li><h1>Tomate: R$<span class="valor5">5.00</span> </h1><p><span class="tomate">0</span></p><div><button class="soma5">+</button><button class="sub subtracao5">-</button></div></li>		
 		</ul>
 
 		<ul class="total">
 			<li><h3>Total:</h3></li>
-			<li><h4>20,00</h4></li>
+			<li><h4>0.00</h4></li>
 			<li><button class="vender">Vender</button></li>
 		</ul>
 
@@ -44,12 +51,7 @@
 			<li><p>Arroz: R$7,00 <span class="arroz">0</span></p></li>			
 			<li><p>Feijão: R$6,00 <span class="feijao">0</span></p></li>
 			<li><p>Leite: R$2,30 <span class="leite">0</span></p></li>		
-			<li><p>Tomate: R$,00 <span class="tomate">0</span></p></li>
-			<li><p>Farinha: R$12,50 <span class="farinha">0</span></p></li>	
-			<li><p>Batata: R$1,50 <span class="batata">0</span></p></li>
-			<li><p>Carne: R$23,00 <span class="carne">0</span></p></li>
-			<li><p>Açucar: R$8,00 <span class="acucar">0</span></p></li>
-			<li><p>Sal: R$3,00 <span class="sal"></span>0</p></li>												
+			<li><p>Tomate: R$,00 <span class="tomate">0</span></p></li>										
 		</ul>
 	</section>
 
@@ -61,6 +63,7 @@
 	telaInicio=$('.inicio');
 	telaVenda=$('.compra');
 	acao=$('.compra button');
+	total = $('.total h4');
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
@@ -69,26 +72,37 @@
 	});
 
 	acao.on("click",function(){
+		console.log(parseFloat($("span.valor1")));
 		if ($(this).hasClass("soma1")) {
 			$(".compra .macarrao").text(parseInt($(".compra .macarrao").text())+1);
+			total.text(parseFloat(total.text())+parseFloat($(".valor1").text()));
 		} else if ($(this).hasClass("soma2")) {
 			$(".compra .arroz").text(parseInt($(".compra .arroz").text())+1);
+			total.text(parseFloat(total.text())+parseFloat($(".valor2").text()));
 		} else if ($(this).hasClass("soma3")) {
 			$(".compra .feijao").text(parseInt($(".compra .feijao").text())+1);
+			total.text(parseFloat(total.text())+parseFloat($(".valor3").text()));
 		} else if ($(this).hasClass("soma4")) {
 			$(".compra .leite").text(parseInt($(".compra .leite").text())+1);
+			total.text(parseFloat(total.text())+parseFloat($(".valor4").text()));
 		} else if ($(this).hasClass("soma5")) {
 			$(".compra .tomate").text(parseInt($(".compra .tomate").text())+1);
+			total.text(parseFloat(total.text())+parseFloat($(".valor5").text()));
 		} else if ($(this).hasClass("subtracao1")) {
 			$(".compra .macarrao").text(parseInt($(".compra .macarrao").text())-1);
+			total.text(parseFloat(total.text())-parseFloat($(".valor1").text()));
 		} else if ($(this).hasClass("subtracao2")) {
 			$(".compra .arroz").text(parseInt($(".compra .arroz").text())-1);
+			total.text(parseFloat(total.text())-parseFloat($(".valor2").text()));
 		} else if ($(this).hasClass("subtracao3")) {
 			$(".compra .feijao").text(parseInt($(".compra .feijao").text())-1);
+			total.text(parseFloat(total.text())-parseFloat($(".valor3").text()));
 		} else if ($(this).hasClass("subtracao4")) {
 			$(".compra .leite").text(parseInt($(".compra .leite").text())-1);
+			total.text(parseFloat(total.text())-parseFloat($(".valor4").text()));
 		} else if ($(this).hasClass("subtracao5")) {
 			$(".compra .tomate").text(parseInt($(".compra .tomate").text())-1);
+			total.text(parseFloat(total.text())-parseFloat($(".valor5").text()));
 		}
 	});
 
