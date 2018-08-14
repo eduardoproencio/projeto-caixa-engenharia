@@ -97,6 +97,71 @@ section.compra ul.total li button.vender {
 }
 
 
+
 section.estoque{
 	display: none;
+}
+section.estoque h2{
+	text-align: center;
+	background: #2980b9;
+	top: 0;
+	padding: 5vh;
+	font-size: 2em;
+	color: white;
+}
+
+section.estoque ul li{
+	justify-content: space-between;
+	display: flex;
+	padding: 0 5vw 0 0;
+	padding-top: 2vh;
+	background: #ecf0f1;
+	padding-bottom: 2vh;
+	line-height: 6vh;
+}
+section.estoque ul li div button{
+	border: none;
+	color: white;
+	font-family: open sans;
+	font-size: 1.5em;
+	background: #2980b9;
+	margin-left: 2vw; 
+	
+}
+section.estoque ul li div button.sub{
+	padding-left: 2.5vw; 
+	padding-right: 2.5vw;
+}
+section.estoque ul li div button.subtracao1{
+}
+
+section.estoque ul.total {
+	background: #e67e22;
+	justify-content: space-between;
+	display: flex;
+	padding: 0 5vw 0 0;
+	padding-top: 2vh;
+	color: white
+	padding-bottom: 2vh;
+	line-height: 6vh;
+}
+section.estoque ul.total li {
+	color: white;
+	background: #e67e22;
+}
+section.estoque ul.total li h3 {
+	margin-left: 2vw;
+}
+section.estoque ul.total li h4 {
+	color: black;
+	background: white;
+	padding-left: 6vw;
+	padding-right: 6vw;
+}
+section.estoque ul.total li button.vender {
+	color: white;
+	font-size: 1em;
+	border: none;
+	background: #d35400;
+
 }
