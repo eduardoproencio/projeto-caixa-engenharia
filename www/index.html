@@ -71,10 +71,18 @@
 	telaVenda=$('.compra');
 	acao=$('.compra button');
 	total = $('.total h4');
+	telaEstoque=$('section.estoque');
+	botaoEstoque=$('button.estoque');
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
 		telaVenda.show();
+
+	});
+
+	botaoEstoque.on("click", function(){
+		telaInicio.hide();
+		telaEstoque.show();
 
 	});
 
