@@ -31,15 +31,25 @@ section.inicio button{
 section.compra{
 	display: block;
 }
+section.compra div.titulo{
+	display: flex;
+}
 section.compra h2{
 	text-align: center;
 	background: #2980b9;
 	top: 0;
-	padding: 5vh;
+	width: 70%;
+	padding: 4vh;
 	font-size: 2em;
 	color: white;
 }
-
+section.compra div button.voltarVenda{
+	width: 20%;
+	background: #1abc9c;
+	border: none;
+	color: white;
+	font-size: 1.5em;
+}
 section.compra ul li{
 	justify-content: space-between;
 	display: flex;
@@ -93,21 +103,30 @@ section.compra ul.total li button.vender {
 	font-size: 1em;
 	border: none;
 	background: #d35400;
-
 }
-
 
 
 section.estoque{
 	display: none;
 }
-section.estoque h2{
+section.compra div.titulo{
+	display: flex;
+}
+section.compra h2{
 	text-align: center;
 	background: #2980b9;
 	top: 0;
-	padding: 5vh;
+	width: 70%;
+	padding: 4vh;
 	font-size: 2em;
 	color: white;
+}
+section.estoque div button.voltarEstoque{
+	width: 20%;
+	background: #1abc9c;
+	border: none;
+	color: white;
+	font-size: 1.5em;
 }
 
 section.estoque ul li{

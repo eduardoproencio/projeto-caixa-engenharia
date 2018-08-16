@@ -21,7 +21,7 @@
 	</section>
 
 	<section class="compra">
-			<h2>Produtos</h2>
+			<div class="titulo"><button class="voltarVenda">←</button><h2>Produtos</h2></div>	
 		<ul>
 			<li>
 				<h1>Macarrão: R$<span class="valor1">4.00</span></h1>
@@ -46,7 +46,7 @@
 	</section>
 
 	<section class="estoque">
-			<h2>Estoque</h2>
+			<div class="tituloEstoque"><button class="voltarEstoque">←</button><h2>Produtos</h2></div>
 		<ul>
 			<li><p>Macarrão: R$4,00 <span class="macarrao">0</span></p></li>
 			<li><p>Arroz: R$7,00 <span class="arroz">0</span></p></li>			
@@ -67,6 +67,8 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
 	botaoVenda=$('.venda');
+	botaoVoltarVenda=$('button.voltarVenda');
+	botaoVoltarEstoque=$('button.voltarEstoque');
 	telaInicio=$('.inicio');
 	telaVenda=$('.compra');
 	acao=$('.compra button');
@@ -80,10 +82,19 @@
 
 	});
 
+	botaoVoltarVenda.on("click", function(){
+		telaVenda.hide();
+		telaInicio.show();
+	});
+
 	botaoEstoque.on("click", function(){
 		telaInicio.hide();
 		telaEstoque.show();
+	});
 
+	botaoVoltarEstoque.on("click", function(){
+		telaEstoque.hide();
+		telaInicio.show();
 	});
 
 	acao.on("click",function(){
