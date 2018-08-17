@@ -109,10 +109,10 @@ section.compra ul.total li button.vender {
 section.estoque{
 	display: none;
 }
-section.compra div.titulo{
+section.estoque div.tituloEstoque{
 	display: flex;
 }
-section.compra h2{
+section.estoque h2{
 	text-align: center;
 	background: #2980b9;
 	top: 0;
