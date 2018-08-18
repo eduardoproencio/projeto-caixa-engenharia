@@ -1,14 +1,11 @@
-@font-face {
-    font-family: futura;
-    src: url(../fonts/LTe50152.woff);
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Responsividade em fontes */
 html { font-size: calc(1em + 1vw); }
 
 
 body{
-	font-family: open Sans;
+	font-family: Roboto;
 }
 
 
@@ -28,81 +25,87 @@ section.inicio button{
 	font-size: 1.5em;
 }
 
+
+
+
 section.compra{
 	display: block;
 }
 section.compra div.titulo{
 	display: flex;
+	height: 15vh;
+	line-height: 15vh;
 }
 section.compra h2{
 	text-align: center;
 	background: #2980b9;
-	top: 0;
-	width: 70%;
-	padding: 4vh;
+	width: 100%;
 	font-size: 2em;
 	color: white;
 }
 section.compra div button.voltarVenda{
-	width: 20%;
+	width: 30%;
 	background: #1abc9c;
 	border: none;
 	color: white;
 	font-size: 1.5em;
 }
-section.compra ul li{
-	justify-content: space-between;
+.container{
 	display: flex;
-	padding: 0 5vw 0 0;
-	padding-top: 2vh;
+	justify-content: space-between;
 	background: #ecf0f1;
-	padding-bottom: 2vh;
-	line-height: 6vh;
+	height: 70vh;
+	padding: 0 4vw;
 }
-section.compra ul li div button{
+section.compra div ul li{
+	height: 20%;
+	line-height: 14vh;
+}
+section.compra div ul li div button{
 	border: none;
+	border-radius: 2px;
+	height: 7vh;
+	width: 7vh;
 	color: white;
 	font-family: open sans;
 	font-size: 1.5em;
-	background: #2980b9;
-	margin-left: 2vw; 
-	
-}
-section.compra ul li div button.sub{
-	padding-left: 2.5vw; 
-	padding-right: 2.5vw;
-}
-section.compra ul li div button.subtracao1{
+	background: #2980b9;	
 }
 
 section.compra ul.total {
 	background: #e67e22;
 	justify-content: space-between;
+	padding: 0 5vw;
 	display: flex;
-	padding: 0 5vw 0 0;
-	padding-top: 2vh;
 	color: white
-	padding-bottom: 2vh;
-	line-height: 6vh;
+	height: 15vh;
+	line-height: 10vh;
 }
 section.compra ul.total li {
 	color: white;
+	text-align: center;
 	background: #e67e22;
 }
 section.compra ul.total li h3 {
-	margin-left: 2vw;
+	line-height: 15vh;
+}
+section.compra ul.total li div{
+	background: white;
+	border-radius: 6px;
 }
 section.compra ul.total li h4 {
 	color: black;
-	background: white;
-	padding-left: 6vw;
-	padding-right: 6vw;
+	margin: 2.5vh 10vw;
+	/*background: white;*/
 }
 section.compra ul.total li button.vender {
+	margin-top: 3vh;
 	color: white;
 	font-size: 1em;
+	padding: 3vw;
 	border: none;
 	background: #d35400;
+	border-radius: 6px;
 }
 
 
