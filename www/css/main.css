@@ -4,53 +4,72 @@
 html { font-size: calc(1em + 1vw); }
 
 
+/*------------------------------------PREDEFINICÕES------------------------------------*/
+
 body{
 	font-family: Roboto;
 }
 
+/*------------------------------------INÍCIO------------------------------------*/
 
 section.inicio{
-	display: none;
+	/*display: none;*/
 	text-align: center;
+	background: #dff9fb;
+	height: 100vh;
+	line-height: 10vh;
+}
+section.inicio h1{
+	font-size: 3em;
+	letter-spacing: 3vw;
+	color: #1e3799;
+	padding-top: 3vh;
+}
+section.inicio img{
+	margin-top: 5vh;
+	width: 50%;
 }
 section.inicio ul{
-	margin-top: 20vh;
+
 }
 section.inicio button{
-	margin-top: 5vh;
-	background: #A39BE7;
+	position: relative;
+	margin-top: 2vh;
+	background: #4a69bd;
 	border: none;
 	color: white;
-	padding: 4vw;
-	font-size: 1.5em;
+	width: 70%;
+	height: 10vh;
+	font-size: 1.3em;
+	border-radius: 10px;
 }
 
 
+/*------------------------------------COMPRA E ESTOQUE------------------------------------*/
 
-
-section.compra{
-	display: block;
+section.compra,section.estoque{
+	display: none;
 }
-section.compra div.titulo{
+section.compra div.titulo,section.estoque div.tituloEstoque{
 	display: flex;
 	height: 15vh;
 	line-height: 15vh;
 }
-section.compra h2{
+section.compra h2,section.estoque h2{
 	text-align: center;
 	background: #2980b9;
 	width: 100%;
 	font-size: 2em;
 	color: white;
 }
-section.compra div button.voltarVenda{
+section.compra div button.voltarVenda,section.estoque div button.voltarEstoque{
 	width: 30%;
 	background: #1abc9c;
 	border: none;
 	color: white;
 	font-size: 1.5em;
 }
-.container{
+.containerVenda, .containerEstoque{
 	display: flex;
 	justify-content: space-between;
 	background: #ecf0f1;
@@ -61,13 +80,12 @@ section.compra div ul li{
 	height: 20%;
 	line-height: 14vh;
 }
-section.compra div ul li div button{
+section.compra div ul li div button,section.estoque div ul li button{
 	border: none;
 	border-radius: 2px;
 	height: 7vh;
 	width: 7vh;
 	color: white;
-	font-family: open sans;
 	font-size: 1.5em;
 	background: #2980b9;	
 }
@@ -109,81 +127,17 @@ section.compra ul.total li button.vender {
 }
 
 
-section.estoque{
-	display: none;
-}
-section.estoque div.tituloEstoque{
-	display: flex;
-}
-section.estoque h2{
-	text-align: center;
-	background: #2980b9;
-	top: 0;
-	width: 70%;
-	padding: 4vh;
-	font-size: 2em;
-	color: white;
-}
-section.estoque div button.voltarEstoque{
-	width: 20%;
-	background: #1abc9c;
-	border: none;
-	color: white;
-	font-size: 1.5em;
-}
 
-section.estoque ul li{
-	justify-content: space-between;
-	display: flex;
-	padding: 0 5vw 0 0;
-	padding-top: 2vh;
-	background: #ecf0f1;
-	padding-bottom: 2vh;
-	line-height: 6vh;
-}
-section.estoque ul li div button{
-	border: none;
-	color: white;
-	font-family: open sans;
-	font-size: 1.5em;
-	background: #2980b9;
-	margin-left: 2vw; 
-	
-}
-section.estoque ul li div button.sub{
-	padding-left: 2.5vw; 
-	padding-right: 2.5vw;
-}
-section.estoque ul li div button.subtracao1{
-}
+/*------------------------------------ESTOQUE------------------------------------*/
 
-section.estoque ul.total {
+
+.containerEstoque{
+	height: 85vh;
+}
+section.estoque div ul li{
+	height: 20%;
+	line-height: 17vh;
+}
+section.estoque div ul li button{
 	background: #e67e22;
-	justify-content: space-between;
-	display: flex;
-	padding: 0 5vw 0 0;
-	padding-top: 2vh;
-	color: white
-	padding-bottom: 2vh;
-	line-height: 6vh;
-}
-section.estoque ul.total li {
-	color: white;
-	background: #e67e22;
-}
-section.estoque ul.total li h3 {
-	margin-left: 2vw;
-}
-section.estoque ul.total li h4 {
-	color: black;
-	background: white;
-	padding-left: 6vw;
-	padding-right: 6vw;
-}
-section.estoque ul.total li button.vender {
-	color: white;
-	font-size: 1em;
-	border: none;
-	background: #d35400;
-
 }

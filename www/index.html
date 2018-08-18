@@ -12,7 +12,11 @@
 </head>
 <body>
 
+	<!-- INÍCIO -->
+
 	<section class="inicio">
+		<h1>CAIXA</h1>
+		<img src="img/caixa.png">
 		<ul>
 			<li><button class="venda">Realizar Venda</button></li>
 			<li><button class="estoque">Verificar Estoque</button></li>
@@ -20,96 +24,117 @@
 		</ul>
 	</section>
 
+
+
+	<!-- COMPRA -->
+
 	<section class="compra">
 		<div class="titulo">
 			<button class="voltarVenda">←</button>
 			<h2>Produtos</h2>
 		</div>
-		<div class="container">
-		<ul>
-			<li><h1>Macarrão</h1></li>
-			<li><h1>Arroz</h1></li>
-			<li><h1>Feijão</h1></li>
-			<li><h1>Leite</h1></li>
-			<li><h1>Tomate</h1></li>
-		</ul>
-		<ul>
-			<li><p>R$<span class="valor1">4.00</span></p></li>
-			<li><p>R$<span class="valor2">7.00</span></p></li>
-			<li><p>R$<span class="valor3">6.00</span></p></li>
-			<li><p>R$<span class="valor4">2.00</span></p></li>
-			<li><p>R$<span class="valor5">5.00</span></p></li>
-		</ul>
-		<ul>
-			<li><p><span class="macarrao">0</span></p></li>
-			<li><p><span class="arroz">0</span></p></li>
-			<li><p><span class="feijao">0</span></p></li>
-			<li><p><span class="leite">0</span></p></li>
-			<li><p><span class="tomate">0</span></p></li>
-		</ul>
-		<ul>
-			<li>
-				<div>
-					<button class="soma1">+</button>
-					<button class="sub subtracao1">-</button>
-				</div>
-			</li>
-			<li>
-				<div>
-					<button class="soma2">+</button>
-					<button class="sub subtracao2">-</button>
-				</div>
-			</li>
-			<li>
-				<div>
-					<button class="soma3">+</button>
-					<button class="sub subtracao3">-</button>
-				</div>
-			</li>
-			<li>
-				<div>
-					<button class="soma4">+</button>
-					<button class="sub subtracao4">-</button>
-				</div>
-			</li>
-			<li>
-				<div>
-					<button class="soma5">+</button>
-					<button class="sub subtracao5">-</button>
-				</div>
-			</li>
-		</ul>
+		<div class="containerVenda">
+			<ul>
+				<li><h1>Macarrão</h1></li>
+				<li><h1>Arroz</h1></li>
+				<li><h1>Feijão</h1></li>
+				<li><h1>Leite</h1></li>
+				<li><h1>Tomate</h1></li>
+			</ul>
+			<ul>
+				<li><p>R$<span class="valor1">4.00</span></p></li>
+				<li><p>R$<span class="valor2">7.00</span></p></li>
+				<li><p>R$<span class="valor3">6.00</span></p></li>
+				<li><p>R$<span class="valor4">2.00</span></p></li>
+				<li><p>R$<span class="valor5">5.00</span></p></li>
+			</ul>
+			<ul>
+				<li><p><span class="macarrao">0</span></p></li>
+				<li><p><span class="arroz">0</span></p></li>
+				<li><p><span class="feijao">0</span></p></li>
+				<li><p><span class="leite">0</span></p></li>
+				<li><p><span class="tomate">0</span></p></li>
+			</ul>
+			<ul>
+				<li>
+					<div>
+						<button class="soma1">+</button>
+						<button class="sub subtracao1">-</button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="soma2">+</button>
+						<button class="sub subtracao2">-</button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="soma3">+</button>
+						<button class="sub subtracao3">-</button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="soma4">+</button>
+						<button class="sub subtracao4">-</button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="soma5">+</button>
+						<button class="sub subtracao5">-</button>
+					</div>
+				</li>
+			</ul>
 		</div>
 		<ul class="total">
 			<li><h3>TOTAL</h3></li>
 			<li><div><h4>0.00</h4></div></li>
 			<li><button class="vender">Vender</button></li>
 		</ul>
-
 	</section>
 
-	<section class="estoque">
-			<div class="tituloEstoque"><button class="voltarEstoque">←</button><h2>Estoque</h2></div>
-		<ul>
-			<li>
-				<h1>Arroz: R$<span class="valor2">7.00</span></h1><p><span class="arroz">0</span></p><div><button class="soma2">+</button></div>
-			</li>	
-			<li>
-				<h1>Feijão: R$<span class="valor3">6.00</span></h1><p><span class="feijao">0</span></p><div><button class="soma3">+</button></div>
-			</li>
-			<li>
-				<h1>Leite: R$<span class="valor4">2.00</span></h1><p><span class="leite">0</span></p><div><button class="soma4">+</button></div>
-			</li>		
-			<li>
-				<h1>Tomate: R$<span class="valor5">5.00</span> </h1><p><span class="tomate">0</span></p><div><button class="soma5">+</button></div>
-			</li>										
-		</ul>
 
-		<ul class="total">
-			<li><h3>Total:</h3></li>
-			<li><h4>20,00</h4></li>
-			<li><button class="vender">Vender</button></li>
-		</ul>
+
+
+	<!-- ESTOQUE -->
+
+	<section class="estoque">
+		<div class="tituloEstoque">
+			<button class="voltarEstoque">←</button>
+			<h2>Estoque</h2>
+		</div>
+		<div class="containerEstoque">
+			<ul>
+				<li><h1>Macarrão</h1></li>
+				<li><h1>Arroz</h1></li>
+				<li><h1>Feijão</h1></li>
+				<li><h1>Leite</h1></li>
+				<li><h1>Tomate</h1></li>
+			</ul>
+			<ul>
+				<li><p>R$<span class="valor1">4.00</span></p></li>
+				<li><p>R$<span class="valor2">7.00</span></p></li>
+				<li><p>R$<span class="valor3">6.00</span></p></li>
+				<li><p>R$<span class="valor4">2.00</span></p></li>
+				<li><p>R$<span class="valor5">5.00</span></p></li>
+			</ul>
+			<ul>
+				<li><p><span class="macarrao">5</span></p></li>
+				<li><p><span class="arroz">8</span></p></li>
+				<li><p><span class="feijao">10</span></p></li>
+				<li><p><span class="leite">7</span></p></li>
+				<li><p><span class="tomate">4</span></p></li>
+			</ul>
+			<ul>
+				<li><button class="soma1">+</button></li>
+				<li><button class="soma2">+</button></li>
+				<li><button class="soma3">+</button></li>
+				<li><button class="soma4">+</button></li>
+				<li><button class="soma5">+</button></li>
+			</ul>
+		</div>
 	</section>
 
 
@@ -121,15 +146,16 @@
 	botaoVoltarEstoque=$('button.voltarEstoque');
 	telaInicio=$('.inicio');
 	telaVenda=$('.compra');
-	acao=$('.compra button');
+	acaoVenda=$('.compra button');
+	acaoEstoque=$('.estoque button');
 	total = $('.total h4');
 	telaEstoque=$('section.estoque');
 	botaoEstoque=$('button.estoque');
 
 	botaoVenda.on("click", function(){
+		// botaoVenda.animate({width:})
 		telaInicio.hide();
 		telaVenda.show();
-
 	});
 
 	botaoVoltarVenda.on("click", function(){
@@ -147,7 +173,7 @@
 		telaInicio.show();
 	});
 
-	acao.on("click",function(){
+	acaoVenda.on("click",function(){
 		console.log(parseFloat($("span.valor1")));
 		if ($(this).hasClass("soma1")) {
 			$(".compra .macarrao").text(parseInt($(".compra .macarrao").text())+1);
@@ -182,6 +208,19 @@
 		}
 	});
 
+	acaoEstoque.on("click",function(){
+		if ($(this).hasClass("soma1")) {
+			$(".estoque .macarrao").text(parseInt($(".estoque .macarrao").text())+1);
+		} else if ($(this).hasClass("soma2")) {
+			$(".estoque .arroz").text(parseInt($(".estoque .arroz").text())+1);
+		} else if ($(this).hasClass("soma3")) {
+			$(".estoque .feijao").text(parseInt($(".estoque .feijao").text())+1);
+		} else if ($(this).hasClass("soma4")) {
+			$(".estoque .leite").text(parseInt($(".estoque .leite").text())+1);
+		} else if ($(this).hasClass("soma5")) {
+			$(".estoque .tomate").text(parseInt($(".estoque .tomate").text())+1);
+		}
+	});
 
 
 </script>
