@@ -42,11 +42,11 @@
 				<li><h1>Tomate</h1></li>
 			</ul>
 			<ul>
-				<li><p>R$<span class="valor1">4.45</span></p></li>
-				<li><p>R$<span class="valor2">7.00</span></p></li>
-				<li><p>R$<span class="valor3">6.00</span></p></li>
-				<li><p>R$<span class="valor4">2.30</span></p></li>
-				<li><p>R$<span class="valor5">5.00</span></p></li>
+				<li><p>R$<span class="valorMacarrao">4.45</span></p></li>
+				<li><p>R$<span class="valorArroz">7.00</span></p></li>
+				<li><p>R$<span class="valorFeijao">6.00</span></p></li>
+				<li><p>R$<span class="valorLeite">2.30</span></p></li>
+				<li><p>R$<span class="valorTomate">5.00</span></p></li>
 			</ul>
 			<ul>
 				<li><p><span class="macarrao">0</span></p></li>
@@ -58,32 +58,32 @@
 			<ul>
 				<li>
 					<div>
-						<button class="soma1">+</button>
-						<button class="sub subtracao1">-</button>
+						<button class="somaMacarrao">+</button>
+						<button class="subtracaoMacarrao">-</button>
 					</div>
 				</li>
 				<li>
 					<div>
-						<button class="soma2">+</button>
-						<button class="sub subtracao2">-</button>
+						<button class="somaArroz">+</button>
+						<button class="subtracaoArroz">-</button>
 					</div>
 				</li>
 				<li>
 					<div>
-						<button class="soma3">+</button>
-						<button class="sub subtracao3">-</button>
+						<button class="somaFeijao">+</button>
+						<button class="subtracaoFeijao">-</button>
 					</div>
 				</li>
 				<li>
 					<div>
-						<button class="soma4">+</button>
-						<button class="sub subtracao4">-</button>
+						<button class="somaLeite">+</button>
+						<button class="subtracaoLeite">-</button>
 					</div>
 				</li>
 				<li>
 					<div>
-						<button class="soma5">+</button>
-						<button class="sub subtracao5">-</button>
+						<button class="somaTomate">+</button>
+						<button class="subtracaoTomate">-</button>
 					</div>
 				</li>
 			</ul>
@@ -114,11 +114,11 @@
 				<li><h1>Tomate</h1></li>
 			</ul>
 			<ul>
-				<li><p>R$<span class="valor1">4.45</span></p></li>
-				<li><p>R$<span class="valor2">7.00</span></p></li>
-				<li><p>R$<span class="valor3">6.00</span></p></li>
-				<li><p>R$<span class="valor4">2.30</span></p></li>
-				<li><p>R$<span class="valor5">5.00</span></p></li>
+				<li><p>R$<span class="valorMacarrao">4.45</span></p></li>
+				<li><p>R$<span class="valorArroz">7.00</span></p></li>
+				<li><p>R$<span class="valorFeijao">6.00</span></p></li>
+				<li><p>R$<span class="valorLeite">2.30</span></p></li>
+				<li><p>R$<span class="valorTomate">5.00</span></p></li>
 			</ul>
 			<ul>
 				<li><p><span class="macarrao">5</span></p></li>
@@ -128,11 +128,11 @@
 				<li><p><span class="tomate">4</span></p></li>
 			</ul>
 			<ul>
-				<li><button class="soma1">+</button></li>
-				<li><button class="soma2">+</button></li>
-				<li><button class="soma3">+</button></li>
-				<li><button class="soma4">+</button></li>
-				<li><button class="soma5">+</button></li>
+				<li><button class="somaMacarrao">+</button></li>
+				<li><button class="somaArroz">+</button></li>
+				<li><button class="somaFeijao">+</button></li>
+				<li><button class="somaLeite">+</button></li>
+				<li><button class="somaTomate">+</button></li>
 			</ul>
 		</div>
 	</section>
@@ -152,6 +152,21 @@
 	telaEstoque=$('section.estoque');
 	botaoEstoque=$('button.estoque');
 	vender=$('.vender');
+	compraMacarrao=$(".compra .macarrao");
+	compraArroz=$(".compra .arroz");
+	compraFeijao=$(".compra .feijao");
+	compraLeite=$(".compra .leite");
+	compraTomate=$(".compra .tomate");
+	valorMacarrao=$(".compra .valorMacarrao");
+	valorArroz=$(".compra .valorArroz");
+	valorFeijao=$(".compra .valorFeijao");
+	valorLeite=$(".compra .valorLeite");
+	valorTomate=$(".compra .valorTomate");
+	estoqueMacarrao=$(".estoque .macarrao");
+	estoqueArroz=$(".estoque .arroz");
+	estoqueFeijao=$(".estoque .feijao");
+	estoqueLeite=$(".estoque .leite");
+	estoqueTomate=$(".estoque .tomate");
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
@@ -174,61 +189,61 @@
 	});
 
 	acaoVenda.on("click",function(){
-		if ($(this).hasClass("soma1")) {
-			$(".compra .macarrao").text(parseInt($(".compra .macarrao").text())+1);
-			total.text((parseFloat(total.text())+parseFloat($(".valor1").text())).toFixed(2));
-		} else if ($(this).hasClass("soma2")) {
-			$(".compra .arroz").text(parseInt($(".compra .arroz").text())+1);
-			total.text((parseFloat(total.text())+parseFloat($(".valor2").text())-0.01).toFixed(2));
-		} else if ($(this).hasClass("soma3")) {
-			$(".compra .feijao").text(parseInt($(".compra .feijao").text())+1);
-			total.text((parseFloat(total.text())+parseFloat($(".valor3").text())-0.01).toFixed(2));
-		} else if ($(this).hasClass("soma4")) {
-			$(".compra .leite").text(parseInt($(".compra .leite").text())+1);
-			total.text((parseFloat(total.text())+parseFloat($(".valor4").text())).toFixed(2));
-		} else if ($(this).hasClass("soma5")) {
-			$(".compra .tomate").text(parseInt($(".compra .tomate").text())+1);
-			total.text((parseFloat(total.text())+parseFloat($(".valor5").text())-0.001).toFixed(2));
-		} else if ($(this).hasClass("subtracao1")) {
-			$(".compra .macarrao").text(parseInt($(".compra .macarrao").text())-1);
-			total.text((parseFloat(total.text())-parseFloat($(".valor1").text())).toFixed(2));
-		} else if ($(this).hasClass("subtracao2")) {
-			$(".compra .arroz").text(parseInt($(".compra .arroz").text())-1);
-			total.text((parseFloat(total.text())-parseFloat($(".valor2").text())+0.01).toFixed(2));
-		} else if ($(this).hasClass("subtracao3")) {
-			$(".compra .feijao").text(parseInt($(".compra .feijao").text())-1);
-			total.text((parseFloat(total.text())-parseFloat($(".valor3").text())+0.01).toFixed(2));
-		} else if ($(this).hasClass("subtracao4")) {
-			$(".compra .leite").text(parseInt($(".compra .leite").text())-1);
-			total.text((parseFloat(total.text())-parseFloat($(".valor4").text())).toFixed(2));
-		} else if ($(this).hasClass("subtracao5")) {
-			$(".compra .tomate").text(parseInt($(".compra .tomate").text())-1);
-			total.text((parseFloat(total.text())-parseFloat($(".valor5").text())+0.001).toFixed(2));
+		if ($(this).hasClass("somaMacarrao")) {
+			compraMacarrao.text(parseInt(compraMacarrao.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valorMacarrao.text())).toFixed(2));
+		} else if ($(this).hasClass("somaArroz")) {
+			compraArroz.text(parseInt(compraArroz.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valorArroz.text())-0.001).toFixed(2));
+		} else if ($(this).hasClass("somaFeijao")) {
+			compraFeijao.text(parseInt(compraFeijao.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valorFeijao.text())-0.001).toFixed(2));
+		} else if ($(this).hasClass("somaLeite")) {
+			compraLeite.text(parseInt(compraLeite.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valorLeite.text())).toFixed(2));
+		} else if ($(this).hasClass("somaTomate")) {
+			compraTomate.text(parseInt(compraTomate.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valorTomate.text())-0.001).toFixed(2));
+		} else if ($(this).hasClass("subtracaoMacarrao")) {
+			compraMacarrao.text(parseInt(compraMacarrao.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valorMacarrao.text())).toFixed(2));
+		} else if ($(this).hasClass("subtracaoArroz")) {
+			compraArroz.text(parseInt(compraArroz.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valorArroz.text())+0.001).toFixed(2));
+		} else if ($(this).hasClass("subtracaoFeijao")) {
+			compraFeijao.text(parseInt(compraFeijao.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valorFeijao.text())+0.001).toFixed(2));
+		} else if ($(this).hasClass("subtracaoLeite")) {
+			compraLeite.text(parseInt(compraLeite.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valorLeite.text())).toFixed(2));
+		} else if ($(this).hasClass("subtracaoTomate")) {
+			compraTomate.text(parseInt(compraTomate.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valorTomate.text())+0.001).toFixed(2));
 		}
 	});
 
 	acaoEstoque.on("click",function(){
-		if ($(this).hasClass("soma1")) {
-			$(".estoque .macarrao").text(parseInt($(".estoque .macarrao").text())+1);
-		} else if ($(this).hasClass("soma2")) {
-			$(".estoque .arroz").text(parseInt($(".estoque .arroz").text())+1);
-		} else if ($(this).hasClass("soma3")) {
-			$(".estoque .feijao").text(parseInt($(".estoque .feijao").text())+1);
-		} else if ($(this).hasClass("soma4")) {
-			$(".estoque .leite").text(parseInt($(".estoque .leite").text())+1);
-		} else if ($(this).hasClass("soma5")) {
-			$(".estoque .tomate").text(parseInt($(".estoque .tomate").text())+1);
+		if ($(this).hasClass("somaMacarrao")) {
+			estoqueMacarrao.text(parseInt(estoqueMacarrao.text())+1);
+		} else if ($(this).hasClass("somaArroz")) {
+			estoqueArroz.text(parseInt(estoqueArroz.text())+1);
+		} else if ($(this).hasClass("somaFeijao")) {
+			estoqueFeijao.text(parseInt(estoqueFeijao.text())+1);
+		} else if ($(this).hasClass("somaLeite")) {
+			estoqueFeijao.text(parseInt(estoqueFeijao.text())+1);
+		} else if ($(this).hasClass("somaTomate")) {
+			estoqueTomate.text(parseInt(estoqueTomate.text())+1);
 		}
 	});
 
 	vender.on("click",function(){
 		telaVenda.hide();
 		telaInicio.show();
-		$(".estoque .macarrao").text(parseInt($(".estoque .macarrao").text())-parseInt($(".compra .macarrao").text()));
-		$(".estoque .arroz").text(parseInt($(".estoque .arroz").text())-parseInt($(".compra .arroz").text()));
-		$(".estoque .feijao").text(parseInt($(".estoque .feijao").text())-parseInt($(".compra .feijao").text()));
-		$(".estoque .leite").text(parseInt($(".estoque .leite").text())-parseInt($(".compra .leite").text()));
-		$(".estoque .tomate").text(parseInt($(".estoque .tomate").text())-parseInt($(".compra .tomate").text()));
+		estoqueMacarrao.text(parseInt(estoqueMacarrao.text())-parseInt(compraMacarrao.text()));
+		estoqueArroz.text(parseInt(estoqueArroz.text())-parseInt(compraArroz.text()));
+		estoqueFeijao.text(parseInt(estoqueFeijao.text())-parseInt(compraFeijao.text()));
+		estoqueLeite.text(parseInt(estoqueLeite.text())-parseInt(compraLeite.text()));
+		estoqueTomate.text(parseInt(estoqueTomate.text())-parseInt(compraTomate.text()));
 	});
 
 </script>
