@@ -65,7 +65,7 @@ section.compra h2,section.estoque h2{
 	font-size: 2em;
 	color: white;
 }
-section.compra div button.voltarVenda,section.estoque div button.voltarEstoque{
+.voltar{
 	width: 30%;
 	background: #1abc9c;
 	border: none;
@@ -107,7 +107,7 @@ section.compra ul.total li {
 	text-align: center;
 	background: #e67e22;
 }
-section.compra ul.total li h3 {
+section.compra ul.total li h3,section.compra ul.total li p{
 	line-height: 15vh;
 }
 section.compra ul.total li div{

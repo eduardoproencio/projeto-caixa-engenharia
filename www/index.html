@@ -30,7 +30,7 @@
 
 	<section class="compra">
 		<div class="titulo">
-			<button class="voltarVenda">←</button>
+			<button class="voltar">←</button>
 			<h2>Produtos</h2>
 		</div>
 		<div class="containerVenda">
@@ -90,6 +90,7 @@
 		</div>
 		<ul class="total">
 			<li><h3>TOTAL</h3></li>
+			<li><p>R$</p></li>
 			<li><div><h4>0.00</h4></div></li>
 			<li><button class="vender">Vender</button></li>
 		</ul>
@@ -102,7 +103,7 @@
 
 	<section class="estoque">
 		<div class="tituloEstoque">
-			<button class="voltarEstoque">←</button>
+			<button class="voltar">←</button>
 			<h2>Estoque</h2>
 		</div>
 		<div class="containerEstoque">
@@ -142,8 +143,7 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
 	botaoVenda=$('.venda');
-	botaoVoltarVenda=$('button.voltarVenda');
-	botaoVoltarEstoque=$('button.voltarEstoque');
+	botaoVoltar=$('button.voltar');
 	telaInicio=$('.inicio');
 	telaVenda=$('.compra');
 	acaoVenda=$('.compra button');
@@ -173,52 +173,49 @@
 		telaVenda.show();
 	});
 
-	botaoVoltarVenda.on("click", function(){
-		telaVenda.hide();
-		telaInicio.show();
-	});
-
 	botaoEstoque.on("click", function(){
 		telaInicio.hide();
 		telaEstoque.show();
 	});
 
-	botaoVoltarEstoque.on("click", function(){
+	botaoVoltar.on("click", function(){
+		telaVenda.hide();
 		telaEstoque.hide();
 		telaInicio.show();
 	});
 
+	function valores(adicao,valor,operacao){
+		if (operacao=="soma") {
+			adicao.text(parseInt(adicao.text())+1);
+			total.text((parseFloat(total.text())+parseFloat(valor.text())-0.001).toFixed(2));
+		} else if (operacao="subtracao"){
+			adicao.text(parseInt(adicao.text())-1);
+			total.text((parseFloat(total.text())-parseFloat(valor.text())+0.001).toFixed(2));
+		}
+	};
+
+
 	acaoVenda.on("click",function(){
 		if ($(this).hasClass("somaMacarrao")) {
-			compraMacarrao.text(parseInt(compraMacarrao.text())+1);
-			total.text((parseFloat(total.text())+parseFloat(valorMacarrao.text())).toFixed(2));
+			valores(compraMacarrao,valorMacarrao,"soma");
 		} else if ($(this).hasClass("somaArroz")) {
-			compraArroz.text(parseInt(compraArroz.text())+1);
-			total.text((parseFloat(total.text())+parseFloat(valorArroz.text())-0.001).toFixed(2));
+			valores(compraArroz,valorArroz,"soma");
 		} else if ($(this).hasClass("somaFeijao")) {
-			compraFeijao.text(parseInt(compraFeijao.text())+1);
-			total.text((parseFloat(total.text())+parseFloat(valorFeijao.text())-0.001).toFixed(2));
+			valores(compraFeijao,valorFeijao,"soma");
 		} else if ($(this).hasClass("somaLeite")) {
-			compraLeite.text(parseInt(compraLeite.text())+1);
-			total.text((parseFloat(total.text())+parseFloat(valorLeite.text())).toFixed(2));
+			valores(compraLeite,valorLeite,"soma");
 		} else if ($(this).hasClass("somaTomate")) {
-			compraTomate.text(parseInt(compraTomate.text())+1);
-			total.text((parseFloat(total.text())+parseFloat(valorTomate.text())-0.001).toFixed(2));
+			valores(compraTomate,valorTomate,"soma");
 		} else if ($(this).hasClass("subtracaoMacarrao")) {
-			compraMacarrao.text(parseInt(compraMacarrao.text())-1);
-			total.text((parseFloat(total.text())-parseFloat(valorMacarrao.text())).toFixed(2));
+			valores(compraMacarrao,valorMacarrao,"subtracao");
 		} else if ($(this).hasClass("subtracaoArroz")) {
-			compraArroz.text(parseInt(compraArroz.text())-1);
-			total.text((parseFloat(total.text())-parseFloat(valorArroz.text())+0.001).toFixed(2));
+			valores(compraArroz,valorArroz,"subtracao");
 		} else if ($(this).hasClass("subtracaoFeijao")) {
-			compraFeijao.text(parseInt(compraFeijao.text())-1);
-			total.text((parseFloat(total.text())-parseFloat(valorFeijao.text())+0.001).toFixed(2));
+			valores(compraFeijao,valorFeijao,"subtracao");
 		} else if ($(this).hasClass("subtracaoLeite")) {
-			compraLeite.text(parseInt(compraLeite.text())-1);
-			total.text((parseFloat(total.text())-parseFloat(valorLeite.text())).toFixed(2));
+			valores(compraLeite,valorLeite,"subtracao");
 		} else if ($(this).hasClass("subtracaoTomate")) {
-			compraTomate.text(parseInt(compraTomate.text())-1);
-			total.text((parseFloat(total.text())-parseFloat(valorTomate.text())+0.001).toFixed(2));
+			valores(compraTomate,valorTomate,"subtracao");
 		}
 	});
 
