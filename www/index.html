@@ -48,7 +48,7 @@
 				<li><p>R$<span class="valorLeite">2.30</span></p></li>
 				<li><p>R$<span class="valorTomate">5.00</span></p></li>
 			</ul>
-			<ul>
+			<ul class="quantidades">
 				<li><p><span class="macarrao">0</span></p></li>
 				<li><p><span class="arroz">0</span></p></li>
 				<li><p><span class="feijao">0</span></p></li>
@@ -138,7 +138,32 @@
 		</div>
 	</section>
 
+	<!-- HISTÓRICO -->
 
+	<section class="historico">
+		<div class="tituloHistorico">
+			<button class="voltar">←</button>
+			<h2>Histórico</h2>
+		</div>
+		<div class="containerHistorico">
+		<ul class="codigos">
+			<li class="legenda"><h1>Compra</h1></li>
+			<li><p>1</p></li>
+		</ul>
+		<ul class="totais">
+			<li class="legenda"><p>Valor(R$)</p></li>
+			<li><p>10.00</p></li>
+		</ul>
+		<ul class="datas">
+			<li class="legenda">Data</li>
+			<li class="primeiro"><p>19/08/2018<br>15:30:10</p></li>
+		</ul>
+		<ul class="itens">
+			<li class="legenda semBorda"><p>Ítens</p></li>
+			<li><img src="img/carrinho.png"></li>
+		</ul>
+		</div>
+	</section>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script>
@@ -151,6 +176,8 @@
 	total = $('.total h4');
 	telaEstoque=$('section.estoque');
 	botaoEstoque=$('button.estoque');
+	telaHistorico=$('section.historico');
+	botaoHistorico=$('button.historico');
 	vender=$('.vender');
 	compraMacarrao=$(".compra .macarrao");
 	compraArroz=$(".compra .arroz");
@@ -167,6 +194,7 @@
 	estoqueFeijao=$(".estoque .feijao");
 	estoqueLeite=$(".estoque .leite");
 	estoqueTomate=$(".estoque .tomate");
+	var codigoVenda=2;
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
@@ -178,17 +206,25 @@
 		telaEstoque.show();
 	});
 
+	botaoHistorico.on("click", function(){
+		telaInicio.hide();
+		telaHistorico.show();
+	});
+
 	botaoVoltar.on("click", function(){
 		telaVenda.hide();
 		telaEstoque.hide();
+		telaHistorico.hide();
 		telaInicio.show();
+		$(".quantidades span").text(0);
+		total.text("0.00");
 	});
 
-	function valores(adicao,valor,operacao){
-		if (operacao=="soma") {
+	function valores(adicao,estoque,valor,operacao){
+		if (operacao=="soma" && parseInt(adicao.text())<parseInt(estoque.text())) {
 			adicao.text(parseInt(adicao.text())+1);
 			total.text((parseFloat(total.text())+parseFloat(valor.text())-0.001).toFixed(2));
-		} else if (operacao="subtracao"){
+		} else if (operacao=="subtracao" && parseInt(adicao.text())>0){
 			adicao.text(parseInt(adicao.text())-1);
 			total.text((parseFloat(total.text())-parseFloat(valor.text())+0.001).toFixed(2));
 		}
@@ -197,25 +233,25 @@
 
 	acaoVenda.on("click",function(){
 		if ($(this).hasClass("somaMacarrao")) {
-			valores(compraMacarrao,valorMacarrao,"soma");
+			valores(compraMacarrao,estoqueMacarrao,valorMacarrao,"soma");
 		} else if ($(this).hasClass("somaArroz")) {
-			valores(compraArroz,valorArroz,"soma");
+			valores(compraArroz,estoqueArroz,valorArroz,"soma");
 		} else if ($(this).hasClass("somaFeijao")) {
-			valores(compraFeijao,valorFeijao,"soma");
+			valores(compraFeijao,estoqueFeijao,valorFeijao,"soma");
 		} else if ($(this).hasClass("somaLeite")) {
-			valores(compraLeite,valorLeite,"soma");
+			valores(compraLeite,estoqueLeite,valorLeite,"soma");
 		} else if ($(this).hasClass("somaTomate")) {
-			valores(compraTomate,valorTomate,"soma");
+			valores(compraTomate,estoqueTomate,valorTomate,"soma");
 		} else if ($(this).hasClass("subtracaoMacarrao")) {
-			valores(compraMacarrao,valorMacarrao,"subtracao");
+			valores(compraMacarrao,estoqueMacarrao,valorMacarrao,"subtracao");
 		} else if ($(this).hasClass("subtracaoArroz")) {
-			valores(compraArroz,valorArroz,"subtracao");
+			valores(compraArroz,estoqueArroz,valorArroz,"subtracao");
 		} else if ($(this).hasClass("subtracaoFeijao")) {
-			valores(compraFeijao,valorFeijao,"subtracao");
+			valores(compraFeijao,estoqueFeijao,valorFeijao,"subtracao");
 		} else if ($(this).hasClass("subtracaoLeite")) {
-			valores(compraLeite,valorLeite,"subtracao");
+			valores(compraLeite,estoqueLeite,valorLeite,"subtracao");
 		} else if ($(this).hasClass("subtracaoTomate")) {
-			valores(compraTomate,valorTomate,"subtracao");
+			valores(compraTomate,estoqueTomate,valorTomate,"subtracao");
 		}
 	});
 
@@ -234,6 +270,7 @@
 	});
 
 	vender.on("click",function(){
+		if(parseInt(total.text())!=0){
 		telaVenda.hide();
 		telaInicio.show();
 		estoqueMacarrao.text(parseInt(estoqueMacarrao.text())-parseInt(compraMacarrao.text()));
@@ -241,6 +278,22 @@
 		estoqueFeijao.text(parseInt(estoqueFeijao.text())-parseInt(compraFeijao.text()));
 		estoqueLeite.text(parseInt(estoqueLeite.text())-parseInt(compraLeite.text()));
 		estoqueTomate.text(parseInt(estoqueTomate.text())-parseInt(compraTomate.text()));
+		$(".codigos").append("<li>"+codigoVenda+"</li>");
+		codigoVenda++;
+		$(".totais").append("<li>"+total.text()+"</li>");
+		
+
+		$(".quantidades span").text(0);
+		total.text("0.00");
+
+		var data = new Date();
+		var mes = data.getMonth()+1;
+		var dia = data.getDate();
+		var dataAtual = (dia<10 ? '0' : '') + dia + '/' +(mes<10 ? '0' : '') + mes + '/' +data.getFullYear();
+		var horario = (data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds());
+		$(".datas").append("<li><p>"+dataAtual+"<br>"+horario+"</p></li>");
+		$(".itens").append("<li><img src='img/carrinho.png'></li>")
+		};
 	});
 
 </script>
