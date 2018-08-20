@@ -2,7 +2,7 @@
 <widget id="io.cordova.prova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Projeto</name>
     <description>
-        projeto de engenharia
+        Desenvolvimento de um caixa para um projeto de engenharia de software
     </description>
     <author email="duproencio@gmail.com" href="#">
         Eduardo Proencio

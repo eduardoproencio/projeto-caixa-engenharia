@@ -159,9 +159,34 @@
 			<li class="primeiro"><p>19/08/2018<br>15:30:10</p></li>
 		</ul>
 		<ul class="itens">
-			<li class="legenda semBorda"><p>Ítens</p></li>
-			<li><img src="img/carrinho.png"></li>
+			<li class="legenda"><p>Ítens</p></li>
+			<li><img class="1" src="img/carrinho.png"></li>
 		</ul>
+		</div>
+		<div class="info">
+			<div>
+			<ul>
+				<li><h1>Macarrão</h1></li>
+				<li><h1>Arroz</h1></li>
+				<li><h1>Feijão</h1></li>
+				<li><h1>Leite</h1></li>
+				<li><h1>Tomate</h1></li>
+			</ul>
+			<ul>
+				<li><p><span class="macarrao">0</span></p></li>
+				<li><p><span class="arroz">0</span></p></li>
+				<li><p><span class="feijao">0</span></p></li>
+				<li><p><span class="leite">0</span></p></li>
+				<li><p><span class="tomate">0</span></p></li>
+			</ul>
+			<ul>
+				<li><p>R$<span class="totalMacarrao">0</span></p></li>
+				<li><p>R$<span class="totalArroz">0</span></p></li>
+				<li><p>R$<span class="totalFeijao">0</span></p></li>
+				<li><p>R$<span class="totalLeite">0</span></p></li>
+				<li><p>R$<span class="totalTomate">0</span></p></li>
+			</ul>
+			</div>
 		</div>
 	</section>
 
@@ -194,7 +219,21 @@
 	estoqueFeijao=$(".estoque .feijao");
 	estoqueLeite=$(".estoque .leite");
 	estoqueTomate=$(".estoque .tomate");
-	var codigoVenda=2;
+	carrinho=$(".itens");
+	info=$(".info");
+	var codigoVenda=1;
+	var botao = new Audio("audio/botao.mp3");
+	var registradora = new Audio("audio/registradora.mp3");
+
+	$("button").on("click",function(){
+		botao.play();
+	});
+
+	$(".inicio img").on("click",function(){
+		registradora.pause();
+		registradora.currentTime = 0;
+		registradora.play();
+	});
 
 	botaoVenda.on("click", function(){
 		telaInicio.hide();
@@ -269,8 +308,12 @@
 		}
 	});
 
+	var itens=[[0,0,0,0,2]];
 	vender.on("click",function(){
 		if(parseInt(total.text())!=0){
+		registradora.pause();
+		registradora.currentTime = 0;
+		registradora.play();
 		telaVenda.hide();
 		telaInicio.show();
 		estoqueMacarrao.text(parseInt(estoqueMacarrao.text())-parseInt(compraMacarrao.text()));
@@ -278,11 +321,13 @@
 		estoqueFeijao.text(parseInt(estoqueFeijao.text())-parseInt(compraFeijao.text()));
 		estoqueLeite.text(parseInt(estoqueLeite.text())-parseInt(compraLeite.text()));
 		estoqueTomate.text(parseInt(estoqueTomate.text())-parseInt(compraTomate.text()));
-		$(".codigos").append("<li>"+codigoVenda+"</li>");
 		codigoVenda++;
+		$(".codigos").append("<li>"+codigoVenda+"</li>");
+		
 		$(".totais").append("<li>"+total.text()+"</li>");
 		
-
+		itens.push([parseInt(compraMacarrao.text()),parseInt(compraArroz.text()),parseInt(compraFeijao.text()),parseInt(compraLeite.text()),parseInt(compraTomate.text())]);
+			console.log(itens)
 		$(".quantidades span").text(0);
 		total.text("0.00");
 
@@ -292,10 +337,28 @@
 		var dataAtual = (dia<10 ? '0' : '') + dia + '/' +(mes<10 ? '0' : '') + mes + '/' +data.getFullYear();
 		var horario = (data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds());
 		$(".datas").append("<li><p>"+dataAtual+"<br>"+horario+"</p></li>");
-		$(".itens").append("<li><img src='img/carrinho.png'></li>")
+		$(".itens").append("<li><img class='"+codigoVenda+"' src='img/carrinho.png'></li>");
 		};
 	});
 
+	carrinho.on("click","img",function(){
+		botao.play();
+		$("div.info .macarrao").text(parseInt(itens[parseInt($(this).attr("class"))-1][0]));
+		$("div.info .arroz").text(parseInt(itens[parseInt($(this).attr("class"))-1][1]));
+		$("div.info .feijao").text(parseInt(itens[parseInt($(this).attr("class"))-1][2]));
+		$("div.info .leite").text(parseInt(itens[parseInt($(this).attr("class"))-1][3]));
+		$("div.info .tomate").text(parseInt(itens[parseInt($(this).attr("class"))-1][4]));
+		$("div.info .totalMacarrao").text((parseFloat($("div.info .macarrao").text())*parseFloat(valorMacarrao.text())).toFixed(2));
+		$("div.info .totalArroz").text((parseFloat($("div.info .arroz").text())*parseFloat(valorArroz.text())).toFixed(2));
+		$("div.info .totalFeijao").text((parseFloat($("div.info .feijao").text())*parseFloat(valorFeijao.text())).toFixed(2));
+		$("div.info .totalLeite").text((parseFloat($("div.info .leite").text())*parseFloat(valorLeite.text())).toFixed(2));
+		$("div.info .totalTomate").text((parseFloat($("div.info .tomate").text())*parseFloat(valorTomate.text())).toFixed(2));
+		info.fadeIn();
+	});
+
+	$("div.info").on("click",function(){
+		info.fadeOut();
+	});
 </script>
 </body>
 </html>
